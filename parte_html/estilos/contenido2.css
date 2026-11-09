@@ -1,22 +1,27 @@
 @font-face {
     font-family: Poppins;
-    src: url(../Poppins/Poppins-Regular.ttf);
-}
-@font-face {
-    font-family: Montserrat;
-    src: url(../static/Montserrat-Regular.ttf);
+    src: url(../../fuentes/Poppins/Poppins-Regular.ttf);
 }
 @font-face {
     font-family: Poppins-bold;
-    src: url(../Poppins/Poppins-Bold.ttf);
+    src: url(../../fuentes/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fuentes/static/Montserrat-Regular.ttf);
 }
 @font-face {
     font-family: Montserrat-bold;
-    src: url(../static/Montserrat-Bold.ttf);
+    src: url(../../fuentes/static/Montserrat-Bold.ttf);
+}
+* {
+    box-sizing: border-box;
 }
 body{
     margin: 0px;
     background: linear-gradient(#444, #222,#111);
+    font-family: Montserrat, sans-serif;
+    color: #e8e8e8;
 }
 header{
     display: flex;
@@ -63,7 +68,9 @@ header a{
     margin-top: 36px;
 }
 .content--1st--img img{
-    height: 80px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100px;
     margin: auto;
 }
 .content--1st--img{
@@ -73,9 +80,10 @@ header a{
 .content--2nd--imgcont{
     display: flex;
     justify-content: center;
-    
 }
 .content--2nd--imgcont img{
+    max-width: 100%;
+    height: auto;
     width: 300px;
 }
 .html--content--form{
@@ -84,6 +92,7 @@ header a{
 }
 .html--content--form img{
     max-width: 100%;
+    height: auto;
     width: 300px;
 }
 .content h4{
@@ -92,6 +101,10 @@ header a{
     margin-top: 16px;
     margin-left: 16px;
     margin-right: 16px;
+    font-family: Montserrat-bold, Montserrat, sans-serif;
+}
+.content h3{
+    font-family: Montserrat-bold, Montserrat, sans-serif;
 }
 .content p{
     margin: 16px;
@@ -102,40 +115,94 @@ header a{
     justify-content: center;
 }
 .content--sintaxis--1st img{
+    max-width: 100%;
+    height: auto;
     width: 360px;
 }
 .scroll_bar {
     display: flex;
     margin: auto;
     max-width: 780px;
+    width: 100%;
+}
+@media screen and (max-width: 820px) {
+    header {
+        padding: 15px;
+        justify-content: center;
+        gap: 12px;
+    }
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header a {
+        margin: 5px 12px;
+        font-size: 16px;
+    }
+    .content {
+        width: 92%;
+        padding: 0 10px;
+    }
+    .scroll_bar {
+        max-width: 95%;
+    }
 }
 @media screen and (max-width:500px) {
-    .scroll_bar{
-        max-width: 420px;
-    }
     header{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+        padding: 12px 10px;
+        gap: 8px;
     }
     header img{
         width: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+    }
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+    header a {
+        margin: 4px 8px;
+        font-size: 15px;
+    }
+    .content h3 {
+        font-size: 20px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .content h4 {
+        font-size: 18px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .content p {
+        margin: 12px 8px;
+        font-size: 15px;
+    }
+    .scroll_bar{
+        max-width: 100%;
+        padding: 0 5px;
     }
     .contBox{
-        padding: 12px;
+        padding: 12px 6px;
     }
     .imagen{
-        height: 50px;
-        width: 80px;
+        height: 60px;
+        width: 100px;
+        object-fit: cover;
     }
     .box{
         padding: 12px;
     }
     .text{
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 .imagen{

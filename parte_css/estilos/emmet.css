@@ -1,22 +1,27 @@
 @font-face {
     font-family: Poppins;
-    src: url(../fuentes/Poppins/Poppins-Regular.ttf);
+    src: url(../../fuentes/Poppins/Poppins-Regular.ttf);
 }
 @font-face {
     font-family: Poppins-bold;
-    src: url(../fuentes/Poppins/Poppins-Bold.ttf);
+    src: url(../../fuentes/Poppins/Poppins-Bold.ttf);
 }
 @font-face {
     font-family: Montserrat;
-    src: url(../fuentes/static/Montserrat-Regular.ttf);
+    src: url(../../fuentes/static/Montserrat-Regular.ttf);
 }
 @font-face {
     font-family: Montserrat-bold;
-    src: url(../fuentes/static/Montserrat-Bold.ttf);
+    src: url(../../fuentes/static/Montserrat-Bold.ttf);
+}
+* {
+    box-sizing: border-box;
 }
 body{
     margin: 0px;
     background: linear-gradient(#444, #222,#111);
+    font-family: Montserrat, sans-serif;
+    color: #e8e8e8;
 }
 .menu{
     position: sticky;
@@ -83,6 +88,7 @@ h1{
 }
 .vscode img{
     max-width: 100%;
+    height: auto;
     width: 180px;
     margin-right: 28px;
     border-radius: 0 20px 20px 0;
@@ -200,7 +206,10 @@ h1{
     margin: auto;
     text-align: left;
     max-width: 100%;
+    width: 100%;
     padding: 8px;
+    display: block;
+    overflow-x: auto;
 }
 .emmet--html--table td{
     padding: 6px 10px 6px 10px;
@@ -218,6 +227,7 @@ h1{
     margin: auto;
     text-align: justify;
     max-width: 800px;
+    width: 90%;
     color: #e8e8e8;
     font-family: Montserrat;
 }
@@ -228,6 +238,7 @@ h1{
     font-size: 24px;
     margin-left: 16px;
     margin-right: 16px;
+    font-family: Montserrat-bold, Montserrat, sans-serif;
 }
 .content h2{
     margin: 0;
@@ -236,12 +247,17 @@ h1{
     font-size: 24px;
     margin-left: 16px;
     margin-right: 16px;
+    font-family: Montserrat-bold, Montserrat, sans-serif;
 }
 .content h3:first-child{
     margin-top: 36px;
 }
 .content--1st--img img{
-    height: 160px;
+    max-width: 100%;
+    height: auto;
+    max-height: 160px;
+    margin: auto;
+
     margin: auto;
 }
 .content--1st--img{
@@ -325,26 +341,15 @@ a {
     left: 0px;
 }
 
-/* ------------------------------------------responsive------------------------------- */
-@media screen and (max-width:500px) {
-    header{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    header img{
-        width: 40px;
-        margin-bottom: 10px;
-    }
-}
 .emmet--css--table{
     margin: auto;
     text-align: left;
     max-width: 100%;
+    width: 100%;
     padding: 8px;
     margin-top: 8px;
+    display: block;
+    overflow-x: auto;
 }
 .emmet--css--table th{
     border-bottom: 1px solid #e8e8e8;
@@ -369,6 +374,9 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
 }
 footer{
     display: flex;
@@ -396,69 +404,72 @@ footer h4, p{
     text-align: center;
 }
 
-
-/* ---------------------indice desplegable-------------------------------- */
-#check {
-    display: none;
+@media screen and (max-width: 820px) {
+    header {
+        padding: 15px;
+        justify-content: center;
+        gap: 12px;
+    }
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header a {
+        margin: 5px 12px;
+        font-size: 16px;
+    }
+    .content {
+        width: 92%;
+        padding: 0 10px;
+    }
+    .tablas--css {
+        flex-direction: column;
+    }
 }
 
-
-.checkbtn {
-    /* display: block; */
-    position: fixed;
-    width: 69px;
-    height: 26px;
-    text-align: center;
-    color: aliceblue;
-    left: 0;
-    background: black;
-    top: 105px;
-    font-size: 20px;
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1px 10px 10px 0px;
-}
-
-
-.nav-indice ul {
-    display: block;
-    position: fixed;
-    top: 90px;
-    left: -100%;
-    /* width: 17%; */
-    /* height: 100vh; */
-    transition: left 0.25s;
-    margin: 0;
-    padding-top: 70px;
-    background-color: #000000;
-
-}
-
-ul {
-    padding: 0;
-}
-
-.nav-indice ul li {
-    padding: 22px;
-    display: flex;
-    /* justify-content: center; */
-    margin: 0;
-    background-color: rgb(17 17 17);
-}
-
-a {
-    text-decoration: none;
-    color: #eee;
-}
-
-#check:checked~.nav-indice ul {
-    left: 0;
-}
-
-#check:checked~.checkbtn .indice {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+@media screen and (max-width: 500px) {
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 12px 10px;
+        gap: 8px;
+    }
+    header img{
+        width: 40px;
+        margin-bottom: 8px;
+    }
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+    header a {
+        margin: 4px 8px;
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    .content h3 {
+        font-size: 20px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .content h4 {
+        font-size: 18px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .content p {
+        margin: 12px 8px;
+        font-size: 15px;
+    }
+    .tablas--css {
+        flex-direction: column;
+    }
 }
